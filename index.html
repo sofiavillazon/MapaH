@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MapaH</title>
+        <link rel="stylesheet" href="dist/style.css">
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet">
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+    </head>
+    <body>
+
+
+    <!-- /////////////  NAV BAR   //////////////// -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid topBar">
+            
+            <button id="toggle-mobile" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-arrow-right"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                
+                <div class="leftSection">
+                    <button id="modalOptionsButton"href="#popOptions"  class="modalOptionsButton toggle btn btn-icon btn-icon blue shadowDown" type="submit"><i class="icon-option"></i></button>
+                </div>
+                
+                <div class="rightSection">
+                    <form class="d-flex">
+                        <button id="modalFilterButton" href="#modalFilter" class="modalFilterButton toggle btn btn-icon green shadowDown"  type="submit"><i class="icon-filter"></i></button>
+                        
+                        <div class="search shadowDown" >
+                            <i class="icon-search"></i>
+                            <input id="searchBox" name="#modalResults" class="searchBox toggle form-control mr-2" placeholder="Ingresa tu búsqueda" />
+                            <i class="icon-close"></i>
+                        </div>
+                        
+                    </form>
+    
+                    <div class="logoMapache shadowDown activeModalMapache">
+                        <img src="img/logo.jpg" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- /////////////  POP OPTIONS   //////////////// -->
+    <div id="popOptions" class="shadowCenter fade-in" >
+        <div class="row mx-0">
+            <div class="col-12 text-right px-0">
+                <ul class="principalMenu">
+                    <a href="#">
+                        <li>Mapa</li>
+                    </a>
+                    <a href="#">
+                        <li>Ver perfil </li>
+                    </a>
+                    <a href="#"><li>
+                        Estadísticas <i class="icon-arrow-right"></i>
+                        <ul class="submenu">
+                            <a href="#"><li>De la semana <i class="icon-arrow-right"></i></li></a>
+                            <a href="#"><li>Del mes <i class="icon-arrow-right"></i></li></a>
+                            <a href="#"><li>Del año <i class="icon-arrow-right"></i></li></a>
+                        </ul>
+                    </li></a>
+                    <a href="#"><li>
+                        Eventos <i class="icon-arrow-right"></i>
+                        <ul class="submenu">
+                            <a href="#"><li>Ver evento <i class="icon-arrow-right"></i></li></a>
+                        </ul>
+                    </li></a>
+                    <a href="#"><li>
+                        Oportunidades <i class="icon-arrow-right"></i>
+                        <ul class="submenu">
+                            <a href="#"><li>Subir oportunidad <i class="icon-arrow-right"></i></li></a>
+                        </ul>
+                    </li></a>
+                    <a href="#"><li>
+                        Contactar
+                       
+                    </li></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- /////////////  MAP BG   //////////////// -->
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-lg-12">
+                <div class="col-12 map px-0 ">
+                    
+
+                    <div class="map-responsive">
+                        <div id="map"></div>
+                    </div>
+
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+    <!-- /////////////  SIDEBAR GROUP  //////////////// -->
+    <div id="sidebarGorup" class="news">
+
+        <div class="sidebar justify-content-between">
+            <div class="topSidebar">
+                <img class="community" src="img/comunidad.jpg" alt="">
+                <a href="#modalNews" class="toggle icon float-right"><i class="icon-menu"></i></a>
+    
+                <div class="userInfo d-flex">
+                    <div class="avatarContainer">
+                        <img src="img/avatar.png" alt="">
+                    </div>
+                    <div class="textUser">
+                        <h2><strong>Hola!</strong> Alex</h2>
+                        <h3>Científicos.pe</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalNews" class="show fade-in">
+
+            <h6>novedades</h6>
+ 
+            <div class="cardNews green">
+                <h6 class="mb-2">Admin</h6>
+                <div class="notification">
+                    <div class="circle"></div>
+                    <div class="fondo"></div>
+                </div>
+                <p> Fact that a reader will be distracted by the readable content of a page.</p>
+                <small>Mie 12 | 15:03 Perú</small>
+            </div>
+    
+            <div class="cardNews yellow">
+                <h6 class="mb-2">Evento</h6>
+                <div class="notification">
+                    <div class="circle"></div>
+                    <div class="fondo"></div>
+                </div>
+                <p> Fact that a reader will be distracted by the readable content of a page.</p>
+                <small>Mie 12 | 15:03 Perú</small>
+            </div>
+
+            <div class="cardNews green">
+                <h6 class="mb-2">@MarioDias</h6>
+                <div class="notification">
+                    <div class="circle"></div>
+                    <div class="fondo"></div>
+                </div>
+                <p> Fact that a reader will be distracted by the readable content of a page.</p>
+                <small>Mie 12 | 15:03 Perú</small>
+            </div>
+            
+            <div class="cardNews red">
+                <h6 class="mb-2">Admin</h6>
+                <div class="notification">
+                    <div class="circle"></div>
+                    <div class="fondo"></div>
+                </div>
+                <p> Fact that a reader will be distracted by the readable content of a page.</p>
+                <small>Mie 12 | 15:03 Perú</small>
+            </div>
+    
+            <div class="cardNews blue">
+                <h6 class="mb-2">Admin</h6>
+                <div class="notification">
+                    <div class="circle"></div>
+                    <div class="fondo"></div>
+                </div>
+                <p> Fact that a reader will be distracted by the readable content of a page.</p>
+                <small>Mie 12 | 15:03 Perú</small>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- /////////////  MODAL FILTER   //////////////// -->
+    <div id="modalFilter" class="filter shadowCenter fade-in" >
+        <div class="row">
+            <div class="col-md-8 col-12 text-right">
+                <h6>Filtros <br>avanzados</h6>
+            </div>
+            <div class="col-12 ">
+                <form class="base" action="">
+                    <div class="form-group mb-2 mt-5">
+                        <label for="palabraClave"><h6>Palabra clave</h6></label>
+                        <input type="email" class="form-control" id="palabraClave" aria-describedby="emailHelp" placeholder="Ingresa un correo">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="institucion"><h6>Institución</h6></label>
+                        <input type="text" class="form-control" id="institucion" placeholder="Ingresa la institución">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="grado"><h6>Grado de instrucción</h6></label>
+                        <i class="icon-arrow-left"></i>
+                        <select class="form-control">
+                            <option>Seleccione una opcción</option>
+                            <option>Estudiante de pregrado</option>
+                            <option>Bachiller</option>
+                            <option>Licenciado o ingeniero</option>
+                            <option>Estudiante de maestria</option>
+                            <option>Magister</option>
+                            <option>Estudiante de doctorado</option>
+                            <option>Doctor</option>
+                            <option>Estudiante de medicina</option>
+                            <option>Licenciado</option>
+                            <option>Ingeniero</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="pais"><h6>País</h6></label>
+                        <i class="icon-arrow-left"></i>
+                        <select class="form-control">
+                            <option>Seleccione una opcción</option>
+                            <option>Argentina</option>
+                            <option>Barbados</option>
+                            <option>Bielorrusia</option>
+                            <option>China</option>
+                            <option>Dinamarca</option>
+                            <option>Egipto</option>
+                            <option>España</option>
+                            <option>Francia</option>
+                            <option>Granada</option>
+                            <option>India</option>
+                            <option>Perú</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="nombre"><h6>Nombre</h6></label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu búsqueda">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido"><h6>Apellidos</h6></label>
+                        <input type="text" class="form-control" id="apellido" placeholder="Ingresa tu búsqueda">
+                    </div>
+            
+                    <button type="submit" class="mt-4 btn btn-primary w-100">Realizar búsqueda</button>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <!-- /////////////  MODAL RESULT   //////////////// -->
+    <div id="modalResults" class="filter fade-in">
+        <div class="row">
+            <div class="col-12 bgBlue shadowCenter">
+               <h6 class="white">Resultados de la búsqueda</h6>
+               
+               <div class="scroll">
+                <div class="cardScientific d-flex btnScientific" >
+                    <div class="imgContainer">
+                        <img src="img/avatar.png" alt="">
+                    </div>
+                    <div class="textUser">
+                        <span class="green">óptica y fotonica</span>
+                        <h2><strong>Kevin Contreras Villal...</strong></h2>
+                    </div>
+                </div>
+                <div class="cardScientific d-flex btnScientific">
+                    <div class="imgContainer">
+                        <img src="img/avatar.png" alt="">
+                    </div>
+                    <div class="textUser">
+                        <span class="green">óptica y fotonica</span>
+                        <h2><strong>Kevin Contreras Villal...</strong></h2>
+                    </div>
+                </div>
+                <div class="cardScientific d-flex btnScientific">
+                    <div class="imgContainer">
+                        <img src="img/avatar.png" alt="">
+                    </div>
+                    <div class="textUser">
+                        <span class="green">óptica y fotonica</span>
+                        <h2><strong>Kevin Contreras Villal...</strong></h2>
+                    </div>
+                </div>
+                <div class="cardScientific d-flex btnScientific">
+                    <div class="imgContainer">
+                        <img src="img/avatar.png" alt="">
+                    </div>
+                    <div class="textUser">
+                        <span class="green">óptica y fotonica</span>
+                        <h2><strong>Kevin Contreras Villal...</strong></h2>
+                    </div>
+                </div>
+
+                <div class="cardScientific d-flex btnScientific">
+                    <div class="imgContainer">
+                        <img src="img/avatar.png" alt="">
+                    </div>
+                    <div class="textUser">
+                        <span class="green">óptica y fotonica</span>
+                        <h2><strong>Kevin Contreras Villal...</strong></h2>
+                    </div>
+                </div>
+
+                <div class="cardScientific d-flex btnScientific">
+                    <div class="imgContainer">
+                        <img src="img/avatar.png" alt="">
+                    </div>
+                    <div class="textUser">
+                        <span class="green">óptica y fotonica</span>
+                        <h2><strong>Kevin Contreras Villal...</strong></h2>
+                    </div>
+                </div>
+               </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- /////////////  MODAL SCIENTIFICS   //////////////// -->
+    <div class="modal fade-in" id="scientifics" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <img src="img/comunidad.jpg" alt="">
+                        </div>
+                        <div class="col-md-12">
+                            <div class="cardScientific bigest d-flex">
+                                <div class="imgContainer">
+                                    <img src="img/avatar.png" alt="">
+                                </div>
+                                <div class="textUser">
+                                    <span class="green">óptica y fotonica</span>
+                                    <h2><strong>Kevin Contreras Villal...</strong></h2>
+                                    <p>Pontificia Universidad Católica del Perú</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separador mt-3"></div>
+                        <div class="col-md-12 textDescription">
+                            <h6>Departament</h6>
+                            <p>Centre for Nanoscience and Nanotechnology</p>
+
+                            <h6>Intereses</h6>
+                            <p>Fotones, fonones,Superlattice, Pump and probe, Raman</p>
+
+                            <h6>Campo de investigación</h6>
+                            <p>Óptica Cuántica</p>
+                        </div>
+                        <div class="separador"></div>
+                        <div class="col-md-12 textDescription">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>Redes sociales</h6>
+                                    <ul>
+                                        <li><a href="#"><i class="icon-youtube"></i></a></li>
+                                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>Redes Profesionales</h6>
+                                    <ul>
+                                        <li><a href="#"><i class="line-grey icon-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="line-grey icon-orcid"></i></a></li>
+                                        <li><a href="#"><i class="line-grey icon-rg"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>Redes DE AMIGOS</h6>
+                                    <ul>
+                                        <li><a href="#"><i class="line-grey icon-instagram"></i></a></li>
+                                        <li><a href="#"><i class="line-grey icon-facebook"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="outModal btn btn-success">Contactar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /////////////  MODAL MAPACHE   //////////////// -->
+    <div class="modal fade-in" id="mapache" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <img src="img/logo-full.png" alt="">
+                        </div>
+
+                        <div class="col-md-12 textDescription text-center">
+                                <ul>
+                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
+                                    <li><a href="#"><i class="icon-instagram"></i></a></li>
+                                    <li><a href="#"><i class="icon-youtbe"></i></a></li>
+                                </ul>
+                        </div>
+
+                        <div class="col-md-12 text-center info-mapache">
+
+                            <h1>¡Conectate con tu comunidad!</h1>
+                            <h2>MapaH Network potencia tu comunidad</h2>
+                            
+                            <p> © 2020 MapaH - Comunidad de cientificos.</p>
+                        </div>
+                      
+                    </div>
+                    
+                    <button type="submit" class="outModal btn btn-warning">Visitar Web</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="col-md-12">
+        
+        <div class="location blue">
+            <div class="circle"></div>
+            <div class="line"></div>
+            <div class="fondo"></div>
+        </div>
+        <div class="pill blue">
+            <div class="rectangle">1</div>
+        </div>
+
+    </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="dist/script.js" ></script>
+
+    </body>
+</html>
