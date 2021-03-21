@@ -3,12 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MapaH-Light</title>
+        <title>MapaH-Dark</title>
         <link rel="stylesheet" href="dist/style.css">
         <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet">
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
     </head>
-    <body onload="load();" class="LightTheme">
+    <body onload="load();" class="darkTheme">
+
 
     <!-- /////////////  NAV BAR   //////////////// -->
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -20,7 +21,7 @@
             </button> -->
             <div class="collapse navbar-collapse justify-content-between show" id="navbarSupportedContent">
                 <div class="leftSection">
-                    <button id="modalOptionsButton" href="#popOptions"  class="modalOptionsButton toggle btn btn-icon btn-icon blue shadowDown" type="submit"><i class="icon-option"></i></button>
+                    <button id="modalOptionsButton"href="#popOptions"  class="modalOptionsButton toggle btn btn-icon btn-icon blue shadowDown" type="submit"><i class="icon-option"></i></button>
                 </div>
                 
                 <div class="rightSection">
@@ -107,7 +108,7 @@
                 <small>Mie 12 | 15:03 Perú</small>
             </div>
 
-            <div class="cardNews green">
+            <div class="cardNews green" >
                 <h6 class="mb-2">@MarioDias</h6>
                 <div class="notification">
                     <div class="circle"></div>
@@ -143,7 +144,7 @@
     <!-- /////////////  MODAL FILTER   //////////////// -->
     <div id="modalFilter" class="filter shadowCenter fade-in" >
         <div class="row">
-            <div class="col-md-8 col-12 text-right">
+            <div class="col-md-8 col-12 text-right sm">
                 <h6>Filtros <br>avanzados</h6>
             </div>
             <div class="col-12 ">
@@ -217,61 +218,61 @@
                <h6 class="white">Resultados de la búsqueda</h6>
                
                <div class="group scrollsm">
-                    <div class="cardScientific d-flex btnScientific" >
-                        <div class="imgContainer">
-                            <img src="img/avatar.png" alt="">
-                        </div>
-                        <div class="textUser">
-                            <span class="green">óptica y fotonica</span>
-                            <h2><strong>Kevin Contreras Villal...</strong></h2>
-                        </div>
+                <div class="cardScientific d-flex btnScientific">
+                    <div class="imgContainer">
+                        <img src="img/avatar.png" alt="">
                     </div>
-                   
-                    <div class="cardScientific d-flex btnScientific">
-                        <div class="imgContainer">
-                            <img src="img/avatar.png" alt="">
-                        </div>
-                        <div class="textUser">
-                            <span class="green">óptica y fotonica</span>
-                            <h2><strong>Kevin Contreras Villal...</strong></h2>
-                        </div>
-                    </div>
-                    <div class="cardScientific d-flex btnScientific">
-                        <div class="imgContainer">
-                            <img src="img/avatar.png" alt="">
-                        </div>
-                        <div class="textUser">
-                            <span class="green">óptica y fotonica</span>
-                            <h2><strong>Kevin Contreras Villal...</strong></h2>
-                        </div>
-                    </div>
-                    <div class="cardScientific d-flex btnScientific">
-                        <div class="imgContainer">
-                            <img src="img/avatar.png" alt="">
-                        </div>
-                        <div class="textUser">
-                            <span class="green">óptica y fotonica</span>
-                            <h2><strong>Kevin Contreras Villal...</strong></h2>
-                        </div>
-                    </div>
-                    <div class="cardScientific d-flex btnScientific">
-                        <div class="imgContainer">
-                            <img src="img/avatar.png" alt="">
-                        </div>
-                        <div class="textUser">
-                            <span class="green">óptica y fotonica</span>
-                            <h2><strong>Kevin Contreras Villal...</strong></h2>
-                        </div>
-                    </div>
-                    <div class="moreLink">
-                        <a href="#">Ver más <i class="icon-plus"></i></a>
+                    <div class="textUser">
+                        <span class="green">óptica y fotonica</span>
+                        <h2><strong>Kevin Contreras Villal...</strong></h2>
                     </div>
                 </div>
+                <div class="cardScientific d-flex btnScientific">
+                    <div class="imgContainer">
+                        <img src="img/avatar.png" alt="">
+                    </div>
+                    <div class="textUser">
+                        <span class="green">óptica y fotonica</span>
+                        <h2><strong>Kevin Contreras Villal...</strong></h2>
+                    </div>
+                </div>
+                <div class="cardScientific d-flex btnScientific">
+                    <div class="imgContainer">
+                        <img src="img/avatar.png" alt="">
+                    </div>
+                    <div class="textUser">
+                        <span class="green">óptica y fotonica</span>
+                        <h2><strong>Kevin Contreras Villal...</strong></h2>
+                    </div>
+                </div>
+
+                <div class="cardScientific d-flex btnScientific">
+                    <div class="imgContainer">
+                        <img src="img/avatar.png" alt="">
+                    </div>
+                    <div class="textUser">
+                        <span class="green">óptica y fotonica</span>
+                        <h2><strong>Kevin Contreras Villal...</strong></h2>
+                    </div>
+                </div>
+
+                <div class="cardScientific d-flex btnScientific">
+                    <div class="imgContainer">
+                        <img src="img/avatar.png" alt="">
+                    </div>
+                    <div class="textUser">
+                        <span class="green">óptica y fotonica</span>
+                        <h2><strong>Kevin Contreras Villal...</strong></h2>
+                    </div>
+                </div>
+                <div class="moreLink">
+                    <a href="#">Ver más</a>
+                </div>
+               </div>
+
             </div>
         </div>
     </div>
-
-
     <!-- /////////////  POP OPTIONS   //////////////// -->
     <div id="popOptions" class="shadowCenter fade-in" >
         <div class="row mx-0">
@@ -314,7 +315,7 @@
         <div class="row">
             <div class="col-12 ">
                 <div class="text-right">
-                    <h6> Visto en el mapa</h6>
+                    <h6 class="whiteText"> Visto en el mapa</h6>
                 </div>
 
                 <div class="inlineScientific">
@@ -492,19 +493,6 @@
         </div>
     </div>
 
-
-    <!-- <div class="col-md-12">
-        
-        <div class="location blue">
-            <div class="circle"></div>
-            <div class="line"></div>
-            <div class="fondo"></div>
-        </div>
-        <div class="pill blue">
-            <div class="rectangle">1</div>
-        </div>
-
-    </div> -->
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>

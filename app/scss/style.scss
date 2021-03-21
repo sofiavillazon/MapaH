@@ -18,7 +18,6 @@ $green:   #65c6c4;
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
 
-
 // Mapache Colors
 $azul-1: #113f67;
 $azul-2: #4a83a4;
@@ -175,6 +174,15 @@ textarea:focus, input:focus,button:focus{
 
 }
 
+h1,h2,h3,h4,h5,h6,span,small,p{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
 h1,h2,h3,h4,h5,h6{
     font-family: Inter;
     font-style: normal;
@@ -183,6 +191,8 @@ h1,h2,h3,h4,h5,h6{
     text-align: left;
     color: $azul-1;
     margin-bottom: 0px;
+
+    
 }
 
 h1{ font-size: 18px;}
@@ -207,17 +217,18 @@ span.green{
 
 ::-webkit-scrollbar {
     width: 5px;               /* width of the entire scrollbar */
+    height: 5px;
   }
 
 ::-webkit-scrollbar-track {
-background: #f6f8fa2d;        /* color of the tracking area */
-border-radius: 20px;       /* roundness of the scroll thumb */
+    background: #f6f8fa2d;        /* color of the tracking area */
+    border-radius: 20px;       /* roundness of the scroll thumb */
 }
 
 ::-webkit-scrollbar-thumb {
-background-color: $green;    /* color of the scroll thumb */
-border-radius: 20px;       /* roundness of the scroll thumb */
-border: 0px solid $grey-1;  /* creates padding around scroll thumb */
+    background-color: $green;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 0px solid $grey-1;  /* creates padding around scroll thumb */
 }
 
 
@@ -280,6 +291,27 @@ input::placeholder {
     border-color: #e0b92b;
     background-color: #e0b92b;
 }
+
+.moreLink{
+    width: 100%;
+    margin-top: 10px;
+    a{
+        border-radius: 12px;
+        padding: 5px 0px 7px 0px;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        background-color: $grey-1;
+        color: $blue;
+        font-weight: 500;
+        text-decoration: none;
+    }   
+    a:hover{
+        background-color: $azul-2;
+        color: $white;
+    }
+}
+
 
 #map { 
     position: absolute; 
@@ -396,6 +428,7 @@ input::placeholder {
         width: 65px!important;
         height: 80px!important;
         overflow: hidden;
+        cursor: pointer;
         text-align: center;
         img{
             padding: 10px 2px 2px 2px;
@@ -606,7 +639,7 @@ form{
     display: none;
     padding: 10px 15px 0px 15px;
     position: absolute;
-    top:calc(135px);
+    top:calc(132px);
     left: 0px;
     background-color: $white;
     width: 248px;
@@ -632,9 +665,9 @@ form{
     display: none;
     padding: 15px 15px 15px 15px;
     position: absolute;
-    top:135px;
+    top:132px;
     left: 0px;
-    height: calc(100vh - 135px);
+    height: calc(100vh - 132px);
     background-color: $white;
     width: 248px;
     z-index: -1;
@@ -746,13 +779,54 @@ form{
     top: 77px;
     right: 108px;
     width: 293px;
-    z-index: -1;
+    z-index: 5;
     padding: 10px 0px;
     .bgBlue{
         padding: 15px 15px 15px 15px;
         border-radius: 12px;
         background-color: $azul-1;
-        
+    }
+    .text-right h6{
+        text-align: right!important;
+        margin-top: 20px;
+        letter-spacing: 0px;
+        font-size: 14px;
+    }
+    &.show{
+        display: block;
+        max-height: calc(100vh - 100px);    
+    }
+}
+
+#searchInfo{
+    position: absolute;
+    bottom: 8px;
+    right: 15px;
+    width: 273px;
+    z-index: 3;
+    padding: 10px 0;
+    width: calc(100vw - 320px);
+    .whiteText{
+        color: $white;
+    }
+    h6{
+        text-shadow: 0 0 6px $black;
+        letter-spacing: 2px!important;
+    }
+    .inlineScientific{
+        display: flex;
+        overflow-x: scroll;
+        width: 100%;
+    }
+    .cardScientific{
+        margin-right: 10px;
+        margin-bottom: 10px;
+        min-width: 260px;
+    }
+    .bgBlue{
+        padding: 15px 15px 15px 15px;
+        border-radius: 12px;
+        background-color: $azul-1;
     }
     .text-right h6{
         text-align: right!important;
@@ -857,7 +931,7 @@ form{
 
 }
 .scroll{
-    max-height: 350px;
+    max-height: 320px;
     width: 100%;
     overflow-y: scroll;
     padding-right: 12px;
@@ -920,15 +994,44 @@ form{
     }
 }
 
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+    border-top-color: $blue!important;
+}
+
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+    border-right-color: $blue!important;
+}
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+    border-left-color: $blue!important;
+}
+
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+    border-bottom-color: $blue!important;
+}
 
 .marker {
-    background-image: url('../../img/bluePin.png');
     background-size: cover;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     cursor: pointer;
-    
+    background-image: url('../../img/greenPin.png');
+    opacity: 0.8;
+    &.blue{
+        background-image: url('../../img/bluePin.png');
+    }
+    &.green{
+        background-image: url('../../img/greenPin.png');
+    }
+    &.white{
+        background-image: url('../../img/whitePin.png');
+    }
+    &.yellow{
+        background-image: url('../../img/yellowPin.png');
+    }
+    &.red{
+        background-image: url('../../img/redPin.png');
+    }
 }
 .ckickScientific {
     position: absolute;
@@ -959,7 +1062,6 @@ form{
     text-align: left;
     padding: 18px!important;
     z-index: 55555;
-    font-family: 'Open Sans', sans-serif;
     h6{
         color: $green;
         font-size: 10px;
@@ -975,7 +1077,7 @@ form{
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
     align-self: center;
     border-bottom: none;
-    border-top-color: $blue !important;
+    border-top-color: $blue 
 }
 
 .mapboxgl-popup-close-button {
@@ -1000,12 +1102,15 @@ form{
         right: 0;
         top: 0;
     }
-    .sidebarGorup{
+    #sidebarGorup{
         position: absolute;
         width: 280px!important;
         position: absolute;
         left: 0;
         top: 0;
+        .sidebar{
+            margin-right: 0px;
+        }
     }
     #modalNews {
         width: 280px;
@@ -1014,6 +1119,17 @@ form{
 }
 
 @media (max-width: 991px) {
+    
+    .sidebar {
+        max-width: calc(100vw - 80px);
+    }
+    .sidebar .community {
+        width: 150px;
+    }
+    #searchInfo {
+        width: calc(100vw - 28px);
+        display: none;
+    }
     .shadowDown{
         box-shadow: none!important;
     }
@@ -1024,20 +1140,29 @@ form{
         display: none;
         padding: 10px 15px;
         position: absolute;
-        top: 140px;
-        height: calc(100vh - 146px);
-        right: 0px;
+        top: auto;
+        bottom: 0px;
+        height: calc(100vh - 136px);
+        right: 0;
         background-color: #fff;
         width: 100vw;
-        border-radius: 0 0 12px 12px;
-        z-index: 0;
+        border-radius: 12px 12px 0px 0px;
+        z-index: -1;
+        .scrollsm{
+            overflow-y: scroll;
+            height: calc(100vh - 350px);
+        }
+        h6{
+            margin-top: 0px;
+        }
     }
     .navbar {
         width: 100vw!important;
+        background-color: #d5dce8;
         max-width: 100%;
         position: fixed;
         right: 0;
-        top: 0;
+        top: calc(100vh - 70px);
         .navbar-toggler{
             position: absolute;
             top: 10px;
@@ -1058,13 +1183,13 @@ form{
         top: -150px!important;
     }
     #modalNews {
-        padding: 15px;
+        padding: 15px 15px 85px 15px;
         position: absolute;
-        top: 65px;
+        top: 60px;
         left: 0;
         height: calc(100vh - 50px);
         background-color: #fff;
-        width: 280px;
+        width: calc(100vw - 80px);
         z-index: -1;
     }
     .userInfo {
@@ -1072,19 +1197,22 @@ form{
     }
     .navbar-collapse{
         display: flex;
-        background-color: $white;
+        // background-color: $white;
         height: 100vh;
+    }
+    form .search input {
+        font-size: 16px;
     }
     .rightSection {
         position: absolute;
         right: 4px;
-        top: 62px;
+        top: 0px;
         z-index: 9999999;
         form .search {
-            background-color: $blue!important;
+            background-color: $blue;
             height: 55px;
-            max-width: 230px;
-            min-width: 170px;
+            max-width: calc(100vw - 145px);
+            min-width: calc(100vw - 145px);
             margin-right: 5px;
             margin-left: 5px;
             margin-top: 10px;
@@ -1115,7 +1243,7 @@ form{
     .leftSection {
         position: absolute;
         left: 0px;
-        top: 63px;
+        top: 0px;
         z-index: 9999999;
         .btn-icon {
             height: 55px;
@@ -1130,35 +1258,45 @@ form{
     }
     #popOptions {
         position: absolute;
-        top: 130px;
-        left: 0px;
+        top: auto;
+        bottom: 85px;
+        left: 15px;
         padding: 10px 0 0;
         background-color: #fff;
-        width: 96vw;
+        width: 93vw;
         border-radius: 12px;
-        z-index: 1;
-        height: 100vh;
+        z-index: 0;
+        height: 70vh;
+        ul.principalMenu {
+            overflow-y: scroll;
+            height: calc(100vh - 200px);
+        }
         ul.principalMenu li ul.submenu {
             display: inline-block;
             position: relative;
             padding: 0 5px;
             left: 0;
-            background-color: #f2f4f9;
+            background-color: #f2f4f9!important;
             border-radius: 0 12px 12px 0;
-            top: 0px;
-            width: 107%;
-            color: #444;
+            top: 0;
+            width: 100%;
+            color: $blue!important;
         }
     }
     #modalResults {
         position: absolute;
-        top: 127px;
-        background-color: $white;
-        left: 0px;
-        height: 100vh;
-        width: 96%;
-        z-index: 0;
-        padding: 10px 10px;
+        bottom: -5px;
+        top: auto;
+        background-color: #fff;
+        left: 0;
+        height: 80vh;
+        width: 100%;
+        z-index: -1;
+        padding: 10px;
+        .scrollsm{
+            overflow-y: scroll;
+            height: calc(100vh - 250px);
+        }
         .scroll{
             height: 100%;
             max-height: 100%;
@@ -1181,6 +1319,58 @@ form{
         }
     }
 }
+.darkTheme{
+    .mapboxgl-popup-content {
+        background: $white!important;
+    }
+    .mapboxgl-popup-content h2 {
+        color: $azul-1!important;
+        font-weight: 800!important;
+    }
+
+    .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+        border-top-color: $white !important;
+    }
+    
+    .mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+        border-right-color: $white!important;
+    }
+    .mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+        border-left-color: $white!important;
+    }
+    
+    .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+        border-bottom-color: $white!important;
+    }
+    form .search {
+        background-color: $white!important;
+        border: 1px solid $white!important;
+    }
+    form .search .icon-close{
+        color: $blue!important;
+    }
+    #modalResults .bgBlue {
+        background-color: $white;
+    }
+    .white {
+        color: $blue;
+    }
+    .btn-icon.blue {
+        background-color: $white;
+        i{
+            color: $blue;
+        }
+    }
+    .btn-icon.blue:hover {
+        background-color: $green;
+        i{
+            color: $white;
+        }
+    }
+    #popOptions ul.principalMenu li ul.submenu {
+        background-color: $black;
+    }
+}
 
 
 /////// ANIMATIONS //////
@@ -1196,23 +1386,50 @@ form{
     0% {opacity:0;}
     100% {opacity:1;}
     }
-    
+
     @-moz-keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
     }
-    
+
     @-webkit-keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
     }
-    
+
     @-o-keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
     }
-    
+
     @-ms-keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
 }
+.heart {
+    // animation: <animation-name> <animation-duration> <animation-iteration-count>
+    animation: animateHeart 1.2s infinite;
+  }
+@keyframes animateHeart {
+    // scale down and scale up faster in irregular intervals to get the throbbing effect
+    0% {
+      transform: scale(0.8);
+    }
+    5% {
+      transform: scale(0.9);
+    }
+    10% {
+      transform: scale(0.8);
+    }
+    15% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.8);
+    }
+    100% {
+      transform: scale(0.8);
+    }
+  }
+
+
