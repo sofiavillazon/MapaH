@@ -1014,21 +1014,21 @@ form{
     width: 30px;
     height: 30px;
     cursor: pointer;
-    background-image: url('../../img/greenPin.png');
+    background-image: url('../img/greenPin.png');
     &.blue{
-        background-image: url('../../img/bluePin.png');
+        background-image: url('../img/bluePin.png');
     }
     &.green{
-        background-image: url('../../img/greenPin.png');
+        background-image: url('../img/greenPin.png');
     }
     &.white{
-        background-image: url('../../img/whitePin.png');
+        background-image: url('../img/whitePin.png');
     }
     &.yellow{
-        background-image: url('../../img/yellowPin.png');
+        background-image: url('../img/yellowPin.png');
     }
     &.red{
-        background-image: url('../../img/redPin.png');
+        background-image: url('../img/redPin.png');
     }
 }
 .ckickScientific {
